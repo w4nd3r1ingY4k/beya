@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-// import NaivigateBtn from './components/NaivigateBtn';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { StyleSheet, Text, View } from 'react-native';
 import BaseMenu from './components/BottomMenu';
-import NaivigateBtn from './components/Navigate';
+import NavigateBtn from './components/NavigateBtn';
 import { fetchDataFromServer } from './components/Utils';
+import LocaleScreen from './components/LocaleScreen'; 
 
-export default function App() {
+const Stack = createStackNavigator();
+
+function HomeScreen() {
   const [serverResponse, setServerResponse] = useState(null);
 
   const handleButtonPress = async () => {
@@ -19,7 +23,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <NaivigateBtn
+      <NavigateBtn
         title='click to get text from server'
         xpos={100}
         ypos={350}
@@ -27,10 +31,21 @@ export default function App() {
         onPress={handleButtonPress} // Pass the function to be called on press
       />
       {serverResponse && (
-        <Text>{`Fetched data: ${JSON.stringify(serverResponse)}`}</Text>
+        <Text style={styles.response}>{`Fetched data: ${JSON.stringify(serverResponse)}`}</Text>
       )}
       <BaseMenu/>
     </View>
+  );
+}
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Locale" component={LocaleScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
@@ -39,5 +54,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  response: {
+    top: -100
   },
 });

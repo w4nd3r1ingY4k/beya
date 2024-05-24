@@ -13,9 +13,11 @@ type MyObj struct {
 
 func main() {
 	r := gin.Default()
+	var x int = 0
 
 	r.GET("/", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{"message": "Hello, world!"}) // Return JSON instead of plain text
+		c.JSON(http.StatusOK, gin.H{"not a message":fmt.Sprintf("Hello, world! %d", x)})
+		x++
 	})
 
 	r.POST("/echo", func(c *gin.Context) {

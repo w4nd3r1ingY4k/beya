@@ -1,48 +1,53 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import NavigateBtn from './Navigate';
+import { useNavigation } from '@react-navigation/native';
+import NavigateBtn from './NavigateBtn';
 
 export default function BaseMenu() {
-    return (
-        <View style={styles.container}>
-            <NavigateBtn 
-                title="Pay" 
-                xpos={-25} 
-                ypos={730} 
-                color="pink" 
-                borderColor="red"
-                b_width={50}
-                b_height={50}
-                onPress={() => alert('Pay Button Pressed')}
-            />
-            <NavigateBtn 
-                title="Home" 
-                xpos={100} 
-                ypos={760} 
-                color="pink" 
-                borderColor="green"
-                b_width={50}
-                b_height={50}
-                onPress={() => alert('Home Button Pressed')}
-            />
-            <NavigateBtn 
-                title="Locales" 
-                xpos={-150} 
-                ypos={760} 
-                color="pink" 
-                borderColor="orange"
-                b_width={50}
-                b_height={50}
-                onPress={() => alert('Locales Button Pressed')}
-            />
-        </View>
-    );
+  const navigation = useNavigation();
+
+  return (
+    <View style={styles.container}>
+      <NavigateBtn 
+        title="Pay" 
+        xpos={-25} 
+        ypos={660} 
+        color="#C22980" 
+        borderColor="black"
+        b_width={50}
+        b_height={50}
+        onPress={() => alert('Pay Button Pressed')}
+      />
+      <NavigateBtn 
+        title="Locale" 
+        xpos={100} 
+        ypos={660} 
+        color="#C22980" 
+        borderColor="black"
+        b_width={50}
+        b_height={50}
+        onPress={() => navigation.navigate('Locale')}
+      />
+      <NavigateBtn 
+        title="Home" 
+        xpos={-150} 
+        ypos={660} 
+        color="#C22980" 
+        borderColor="black"
+        b_width={50}
+        b_height={50}
+        //onPress={() => alert('Home Button Pressed')}
+        onPress={() => navigation.navigate('Home')}
+      />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        position: 'relative',
-    },
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    position: 'absolute',
+    top: -25
+  },
 });
