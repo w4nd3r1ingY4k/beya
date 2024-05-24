@@ -7,6 +7,7 @@ import NavigateBtn from './components/NavigateBtn';
 import { fetchDataFromServer } from './components/Utils';
 import LocaleScreen from './components/LocaleScreen'; 
 
+
 const Stack = createStackNavigator();
 
 function HomeScreen() {
