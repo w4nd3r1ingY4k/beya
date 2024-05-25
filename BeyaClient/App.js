@@ -6,7 +6,7 @@ import BaseMenu from './components/BottomMenu';
 import NavigateBtn from './components/NavigateBtn';
 import { fetchDataFromServer } from './components/Utils';
 import LocaleScreen from './components/LocaleScreen'; 
-
+import SwitchBtn from './components/SwitchBtn';
 
 const Stack = createStackNavigator();
 
@@ -24,6 +24,7 @@ function HomeScreen() {
 
   return (
     <View style={styles.container}>
+      <SwitchBtn xpos={315} ypos={0}/>
       <NavigateBtn
         title='click to get text from server'
         xpos={100}
