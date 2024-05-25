@@ -1,3 +1,4 @@
+(instructions for team members)
 # Clone the repository
 git clone <repository_url>
 cd BeyaClient
