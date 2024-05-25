@@ -13,6 +13,7 @@ const SwitchBtn = (props) => {
         //thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
         onValueChange={toggleSwitch}
         value={isEnabled}
+        
       />
     </View>
   );
