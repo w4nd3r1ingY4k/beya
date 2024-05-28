@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet, Text, View } from 'react-native';
-import BaseMenu from '../components/BottomMenu';
-import NavigateBtn from '../components/NavigateBtn';
-import { fetchDataFromServer } from '../components/Utils';
-import LocaleScreen from '../components/LocaleScreen'; 
-import SwitchBtn from '../components/SwitchBtn';
+import BaseMenu from './components/BottomMenu';
+import NavigateBtn from './components/NavigateBtn';
+import { fetchDataFromServer } from './components/Utils';
+import LocaleScreen from './components/LocaleScreen'; 
+import SwitchBtn from './components/SwitchBtn';
 
 const Stack = createStackNavigator();
 

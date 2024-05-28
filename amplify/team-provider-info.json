@@ -1,0 +1,15 @@
+{
+  "awsbeya": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-awsbeya-awsbeya-7042e-authRole",
+      "UnauthRoleArn": "arn:aws:iam::975050351747:role/amplify-awsbeya-awsbeya-7042e-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::975050351747:role/amplify-awsbeya-awsbeya-7042e-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-awsbeya-awsbeya-7042e-deployment",
+      "UnauthRoleName": "amplify-awsbeya-awsbeya-7042e-unauthRole",
+      "StackName": "amplify-awsbeya-awsbeya-7042e",
+      "StackId": "arn:aws:cloudformation:eu-north-1:975050351747:stack/amplify-awsbeya-awsbeya-7042e/9384e2d0-1d30-11ef-ac67-0e3d6c3542a0",
+      "AmplifyAppId": "dtct6htyiku7n"
+    }
+  }
+}
