@@ -8,6 +8,7 @@ export default function FeedbackScreen() {
     // Implement your feedback submission logic here
     Alert.alert('Feedback Submitted', `Thanks for the feedback! We really appreciate it :)`);
     setFeedback(''); // Clear the feedback input after submission
+    
   };
 
   return (
