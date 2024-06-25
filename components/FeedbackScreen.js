@@ -4,10 +4,27 @@ import BaseMenu from './BottomMenu';
 export default function FeedbackScreen() {
   const [feedback, setFeedback] = useState('');
 
-  const handleFeedbackSubmit = () => {
-    // Implement your feedback submission logic here
-    Alert.alert('Feedback Submitted', `Thanks for the feedback! We really appreciate it :)`);
-    setFeedback(''); // Clear the feedback input after submission
+  const handleFeedbackSubmit = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/send-feedback', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ feedback }),
+      });
+  
+      if (response.ok) {
+        Alert.alert('Feedback Submitted', 'Thanks for the feedback! We really appreciate it :)');
+        setFeedback(''); // Clear the feedback input after submission
+      } else {
+        const errorData = await response.json();
+        Alert.alert('Submission Failed', errorData.error || 'Failed to send feedback. Please try again later.');
+      }
+    } catch (error) {
+      Alert.alert('Submission Error', 'An error occurred. Please try again later.');
+      console.error('Error submitting feedback:', error);
+    }
   };
 
   return (
