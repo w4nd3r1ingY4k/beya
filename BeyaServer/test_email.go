@@ -7,7 +7,7 @@ import (
 
 func main() {
     from := "beyafeedback@gmail.com"
-    password := "usymmyhhppfwxwpj"
+    password := "lifeisg00d"
     to := "akbar.shamjijr@gmail.com"
     smtpHost := "smtp.gmail.com"
     smtpPort := "587"

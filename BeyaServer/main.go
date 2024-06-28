@@ -19,7 +19,7 @@ type Feedback struct {
 
 func sendEmail(feedback string) error {
     from := "beyafeedback@gmail.com"
-    password := "usymmyhhppfwxwpj"
+    password := "lifeisg00d"
     to := "beyafeedback@gmail.com"
     smtpHost := "smtp.gmail.com"
     smtpPort := "587"
