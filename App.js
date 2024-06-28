@@ -7,6 +7,8 @@ import NavigateBtn from './components/NavigateBtn';
 import { fetchDataFromServer } from './components/Utils';
 import LocaleScreen from './components/LocaleScreen'; 
 import SwitchBtn from './components/SwitchBtn';
+import ImageBtn from './components/ImageBtn';
+import FeedbackScreen from './components/FeedbackScreen';
 
 const Stack = createStackNavigator();
 
@@ -22,13 +24,25 @@ function HomeScreen() {
     }
   };
 
+  const dummyPress = () => {
+    console.log('Button Pressed', 'You pressed the button!');
+  }
+
   return (
     <View style={styles.container}>
+      <ImageBtn
+        onPress={dummyPress}
+        xpos={20} // Adjust position as needed
+        ypos={-5} // Adjust position as needed
+        width={40}
+        height={100}
+        src={require('./assets/InfoBtn.png')} // Local image, adjust the path as needed
+      />
       <SwitchBtn xpos={315} ypos={0}/>
       <NavigateBtn
         title='click to get text from server'
         xpos={100}
-        ypos={350}
+        ypos={330}
         color='grey'
         onPress={handleButtonPress} // Pass the function to be called on press
       />
@@ -46,6 +60,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Locale" component={LocaleScreen} />
+        <Stack.Screen name="Feedback" component={FeedbackScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
